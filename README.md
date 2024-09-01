@@ -16,7 +16,7 @@ git clone https://github.com/knewtr/homework10.1
 ```
 2. Установите зависимости:
 ```
-pip install -r requirements.txt
+poetry install
 ```
 
 ## Как работают функции:
