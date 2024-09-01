@@ -1,4 +1,4 @@
-def get_mask_card_number(card_number: str) -> str:
+def get_mask_card_number(card_number: str) -> str | None:
     """Функция принимает номер карты и возвращает ее маску"""
     masked_card_number: str = ""
     if card_number.isdigit() and len(card_number) == 16:
@@ -6,7 +6,7 @@ def get_mask_card_number(card_number: str) -> str:
     return masked_card_number
 
 
-def get_mask_account(account_number: str) -> str:
+def get_mask_account(account_number: str) -> str | None:
     """Функция принимает номер аккаунта и возвращает его маску"""
     masked_account_number: str = ""
     if account_number.isdigit() and len(account_number) == 20:
