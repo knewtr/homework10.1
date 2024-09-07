@@ -175,6 +175,16 @@ def test_filter_by_currency(transactions_fixture):
             "from": "Visa Classic 6831982476737658",
             "to": "Visa Platinum 8990922113665229"
         }
+    with pytest.raises(StopIteration):
+        next(result)
+
+
+
+
+
+def test_filter_by_currency_empty(transactions: list[dict]) -> None:
+    with pytest.raises(TypeError):
+        filter_by_currency([], "EUR")
 
 def test_transaction_descriptions(transactions_fixture):
     result = transaction_descriptions(transactions_fixture)
