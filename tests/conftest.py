@@ -154,3 +154,11 @@ def test_card_number_generator():
     assert next(result) == "0000 0000 0000 0003"
     assert next(result) == "0000 0000 0000 0004"
     assert next(result) == "0000 0000 0000 0005"
+
+def test_transaction_descriptions_empty(transactions_fixture: list[dict]) -> None:
+    descriptions = transaction_descriptions([])
+    assert list(descriptions) == []
+
+def test_filter_by_currency_empty(transactions_fixture: list[dict]) -> None:
+    with pytest.raises(TypeError):
+        filter_by_currency([], "EUR")

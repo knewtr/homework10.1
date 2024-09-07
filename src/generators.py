@@ -55,7 +55,7 @@ def filter_by_currency(transactions_list: List[dict], default_currency: str) -> 
         if transaction["operationAmount"]["currency"]["code"] == default_currency:
             return transaction
         else:
-            return "Пустой список транзакций"
+            raise TypeError ("Пустой список транзакций")
 
 
 def transaction_descriptions(transactions_list: list[dict[str, str]]) -> str:

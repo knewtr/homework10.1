@@ -14,3 +14,7 @@ from src.generators import card_number_generator
 def test_card_number_generator(start: int, stop: int, expected: str) -> None:
     generated_number = card_number_generator(start, stop)
     assert next(generated_number) == expected
+
+# def test_transaction_descriptions_empty(transaction_list: list[dict]) -> None:
+#     descriptions = transaction_descriptions([])
+#     assert list(descriptions) == []
