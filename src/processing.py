@@ -1,9 +1,7 @@
 from typing import Any
 
 
-def filter_by_state(
-    state_list: list[dict[str, Any]], default_state: str = "EXECUTED"
-) -> list[dict[str, Any]]:
+def filter_by_state(state_list: list[dict[str, Any]], default_state: str = "EXECUTED") -> list[dict[str, Any]]:
     """Функия принимает список словарей и выводит новый список словарей, содержащий
     только те словари, у которых ключ 'state' соответствует заданному значению"""
     new_state_list: list = []

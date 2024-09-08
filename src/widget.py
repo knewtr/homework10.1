@@ -5,12 +5,8 @@ from src.masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(card_data: str | Any) -> str | Any:
     """Функция маскирует номер карты или номер аккаунта"""
-    card_name: str = "".join(
-        element if element.isalpha() or element == " " else "" for element in card_data
-    )
-    card_number: str = "".join(
-        element if element.isdigit() else "" for element in card_data
-    )
+    card_name: str = "".join(element if element.isalpha() or element == " " else "" for element in card_data)
+    card_number: str = "".join(element if element.isdigit() else "" for element in card_data)
     if len(card_number) == 16:
         masked_card_number = get_mask_card_number(card_number)
         masked_data: str = card_name + masked_card_number
