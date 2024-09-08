@@ -1,6 +1,6 @@
-from typing import Any, Iterator, List
+from typing import List, Iterator
 
-transaction_list = [
+transactions = [
     {
         "id": 939719570,
         "state": "EXECUTED",
@@ -49,24 +49,18 @@ transaction_list = [
 ]
 
 
-def filter_by_currency(transactions_list: List[dict], default_currency: str) -> Iterator[dict] | Any:
+def filter_by_currency(transactions_list: List[dict], default_currency: str) -> Iterator:
     """Функция возвращает список транзакций в соответствии с заданной валютой"""
     for transaction in transactions_list:
-        if transaction["operationAmount"]["currency"]["code"] == default_currency:
-            return transaction
-        else:
-            raise TypeError ("Пустой список транзакций")
+        if transaction.get('operationAmount').get('currency').get('code') == default_currency:
+            yield transaction
 
 
-def transaction_descriptions(transactions_list: list[dict[str, str]]) -> str:
+def transaction_descriptions(transaction_list: list[dict[str, str]]) -> str:
     """Функция по очереди возвращает описание каждой транзакции"""
-    try:
-        if transactions_list:
-            for data in transactions_list:
-                transaction_info: str = data.get("description")
-                yield transaction_info
-    except StopIteration:
-        yield "Пустой список транзакций"
+    for data in transaction_list:
+        transaction_info: str = data.get("description")
+        yield transaction_info
 
 
 def card_number_generator(start: int, stop: int) -> str:
