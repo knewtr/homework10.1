@@ -2,6 +2,7 @@ import pytest
 
 from src.processing import filter_by_state, sort_by_date
 
+
 @pytest.mark.parametrize(
     "operations_list, expected",
     [
@@ -36,6 +37,7 @@ from src.processing import filter_by_state, sort_by_date
 )
 def test_filter_by_state_(operations_list, expected):
     assert filter_by_state(operations_list) == expected
+
 
 @pytest.mark.parametrize(
     "dates_list, expected_list",

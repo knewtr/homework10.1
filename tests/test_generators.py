@@ -1,6 +1,6 @@
 import pytest
 
-from src.generators import card_number_generator, transaction_descriptions, filter_by_currency
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 @pytest.mark.parametrize(
@@ -111,7 +111,7 @@ def test_transaction_descriptions_empty():
         next(generator)
 
 
-def test_card_number_generator():
+def test_card_number_generator_():
     result = card_number_generator(1, 5)
     assert next(result) == "0000 0000 0000 0001"
     assert next(result) == "0000 0000 0000 0002"
