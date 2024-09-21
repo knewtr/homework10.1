@@ -1,4 +1,4 @@
-from typing import Iterator, List, Generator
+from typing import Generator, Iterator, List
 
 transactions = [
     {
@@ -56,14 +56,14 @@ def filter_by_currency(transactions_list: List[dict], default_currency: str) -> 
             yield transaction
 
 
-def transaction_descriptions(transaction_list: list[dict[str, str]]) -> Generator|str:
+def transaction_descriptions(transaction_list: list[dict[str, str]]) -> Generator | str:
     """Функция по очереди возвращает описание каждой транзакции"""
     for data in transaction_list:
         transaction_info: str = data.get("description")
         yield transaction_info
 
 
-def card_number_generator(start: int, stop: int) -> Generator|str:
+def card_number_generator(start: int, stop: int) -> Generator | str:
     """Генерирует номер карты в заданном диапазоне"""
     while start <= stop:
         str_number = str(start)
