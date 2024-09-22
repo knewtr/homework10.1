@@ -12,7 +12,7 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 
 
-def get_transaction_rub(transactions: list, transaction_id: int) -> Optional[float]:
+def get_transaction_rub(transactions: list[dict], transaction_id: int) -> Optional[float]:
     """Функция выводит сумму транзакции по id-номеру"""
     for transaction in transactions:
         if transaction.get("id") == transaction_id:
