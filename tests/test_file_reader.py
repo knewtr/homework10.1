@@ -25,7 +25,7 @@ def test_df() -> pd.DataFrame:
 @patch("src.file_reader.pd.read_csv")
 def test_get_transaction_csv(mock_csv, test_df):
     mock_csv.return_value = test_df
-    result = get_transaction_csv("C:/Users/Knewt/myProjects/homework10.1/data/transactions.csv")
+    result = get_transaction_csv("../data/operations.csv")
     expected = test_df.to_dict(orient="records")
     assert result == expected
 
@@ -33,7 +33,7 @@ def test_get_transaction_csv(mock_csv, test_df):
 @patch("src.file_reader.pd.read_excel")
 def test_get_transaction_xlsx(mock_xlsx, test_df):
     mock_xlsx.return_value = test_df
-    result = get_transaction_xlsx("C:/Users/Knewt/myProjects/homework10.1/data/transactions_excel.xlsx")
+    result = get_transaction_xlsx("../data/operations_excel.xlsx")
     expected = test_df.to_dict(orient="records")
     assert result == expected
 
