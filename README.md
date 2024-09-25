@@ -1,3 +1,4 @@
+
 # Homework 10.2
 
 ## Описание:
@@ -163,7 +164,6 @@ logging.basicConfig(
     filemode="w",
 )
 ```
-
 
 ## Документация:
 
