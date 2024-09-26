@@ -1,8 +1,10 @@
 from unittest.mock import patch
 
+from src.external_api import convert_to_rub
+
 # import pytest
 
-from src.external_api import convert_to_rub, get_transaction_rub
+
 # from src.utils import read_json_file
 
 # @pytest.fixture
