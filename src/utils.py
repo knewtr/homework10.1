@@ -28,3 +28,6 @@ def read_json_file(path: str) -> Any:
     except FileNotFoundError:
         logging.info("File Not Found")
         return []
+
+
+print(read_json_file("../data/operations.json"))

@@ -13,7 +13,9 @@ def filter_by_state(state_list: list[dict[str, Any]], default_state: str = "EXEC
     return new_state_list
 
 
-def sort_by_date(date_list: list[dict[str, Any]], reversed_list: bool = True) -> list[dict[str, Any]]:
+def sort_by_date(
+    date_list: list[dict[str, Any]], reversed_list: bool = True
+) -> list[dict[str, Any]]:
     """Функция принимает список словарей и возвращает новый список,
     отсортированный по дате"""
     sorted_date_list = sorted(date_list, key=lambda x: x["date"], reverse=reversed_list)
